@@ -96,4 +96,12 @@ Rust lebih menjamin keamanan memori dan konkurensi sejak tahap kompilasi. Jika s
 Di Rust, kita menggunakan lazy_static! untuk mendeklarasikan Vec sebagai variabel statis karena ini memungkinkan inisialisasi saat runtime, yang tidak bisa dilakukan dengan static biasa. Selain itu, dengan lazy_static!, kita dapat membungkus Vec menggunakan mekanisme sinkronisasi seperti RwLock, sehingga akses ke Vec bisa dikontrol dengan aman tanpa melanggar aturan ownership Rust.
 
 #### Reflection Subscriber-2
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+Tidak terlalu, saya akan berusaha mempelajarinya di hari libur ini untuk persiapan kelompok saya dan juga untuk UTS
 
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+
+Setelah menyelesaikan tutorial dan mencoba test sistem notifikasi dengan beberapa instance Receiver, saya merasa Observer pattern sangat membantu. Pattern ini memisahkan antara sumber notifikasi dan para subscriber, sehingga menambahkan subscriber baru hanya perlu mendaftarkan dirinya ke sistem, tanpa harus mengubah logika utama. Bahkan jika kita ingin menjalankan lebih dari satu instance dari Main app, karena setiap instance akan bertindak sebagai observer atau publisher, integrasi tetap mudah. Sistem ini dirancang untuk skalabilitas, jadi penambahan lebih banyak komponen tetap berjalan lancar.
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+Belum, saya berencana mencobanya nanti
