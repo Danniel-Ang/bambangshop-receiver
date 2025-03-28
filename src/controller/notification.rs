@@ -9,7 +9,7 @@ use crate::service::notification::NotificationService;
 pub fn subscribe(product_type: &str) -> Result<Json<SubscriberRequest>, String> {
     match NotificationService::subscribe(product_type) {
         Ok(f) => Ok(Json::from(f)),
-        Err(e) => Err(e),
+        Err(e) => Err(format!("{:?}", e)),
     }
 }
 
